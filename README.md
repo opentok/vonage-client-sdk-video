@@ -58,8 +58,8 @@ on GitHub.
 Interoperability
 ----------------
 
-Apps written with the Vonage Client SDK Video iOS 2.27.2 can interoperate with Vonage apps
-written with version 2.23+ of the Vonage client SDKs:
+Apps written with the Vonage Client SDK Video iOS 2.29.0 can interoperate with Vonage apps
+written with version 2.27+ of the Vonage client SDKs:
 
 * Vonage.js
 * Vonage Android SDK
@@ -133,7 +133,7 @@ The Vonage Client SDK Video iOS is supported on the following devices:
 
 * iPod touch 6th generation and later
 
-The Vonage Client SDK Video iOS is supported in iOS 13 or higher.
+The Vonage Client SDK Video iOS is supported in iOS 15 or higher.
 
 The Vonage Client SDK Video iOS is supported on Wi-Fi, 4G/LTE, and 5G connections.
 
