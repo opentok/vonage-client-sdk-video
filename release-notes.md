@@ -4,6 +4,164 @@ Vonage Client SDK Video iOS release notes
 New features and changes
 ------------------------
 
+### Version 2.29.0 -- December 2024
+
+* This version of the SDK uses an updated version of WebRTC 121, which includes improvements in performance and stability.
+
+* This version adds performance improvements for Single Peer Connection.
+
+* This version of the SDK only supports iOS 15 or higher.
+
+### Version 2.28.3 -- December 2024
+
+* This version fixes an issue where, in some cases, toggling audio or video immediately after publishing would prevent video from being displayed.
+ 
+* This version fixes an issue where, in some cases, applications running iOS 17.6.1 would crash.
+
+### Version 2.28.2 -- September 2024
+
+* This version fixes an issue where, in some cases, the audio level stayed the same when the publisher was muted.  
+
+* This version fixes an issue where custom audio drivers could potentially cause a crash.  
+
+* This version fixes an issue where, in some cases, audio from web client SDK users was garbled. 
+
+### Version 2.28.1 -- August 2024
+
+* This version adds a minimum required iOS version in the Info.plist. 
+
+* This version fixes an issue where video was briefly stuttering after connecting to another user.
+
+* This version fixes an issue where the video resolution was not updating when devices were rotated.  
+  
+### Version 2.28.0 -- June 2024
+
+* This version adds support for [Single Peer Connection](https://tokbox.com/developer/guides/create-session/#single-peer-connection). When enabled, it reduces OS resource consumption, improves rate control, and in the case of mobile native devices, supports large sessions. See the documentation for the  `OTSessionSettings.singlePeerConnection` property.   
+
+* This version adds support for advanced noise suppression. This uses the Vonage Media Library to provide enhanced noise cancellation. See the documentation for the `OTPublisherKit.audioTransformer` property. This was previously a beta feature. 
+
+### Version 2.27.4 -- June 2024
+
+* This version adds support for reading the Certificate Authority certificates in the trust store of the host so that it can use them as valid root certificates when connecting to OpenTok services.
+
+* This version adds support for Apple's requirement of the
+  [signature for the SDK](https://developer.apple.com/support/third-party-SDK-requirements).
+
+* This version adds support for advanced noise suppression. This uses the Vonage Media Library to provide enhanced noise cancellation. See the documentation for the `OTPublisherKit.audioTransformer` property. This is a beta feature.
+ 
+* This version reduces the size of the SDK by removing the Vonage Media Library code. In order to use methods that use the Vonage Media Library, you must load the Vonage Media Library separately from the Vonage Video iOS SDK. This includes using the `OTPublisherKit.audioTransformers` and `OTPublisherKit.videoTransformers` properties to apply audio and video transformers to the stream. For more information, see [Vonage Media Library integration](https://tokbox.com/developer/guides/vonage-media-processor/ios/#vonage-media-library-integration). 
+
+* This version fixes a crash.  
+
+### Version 2.27.3 -- April 2024
+
+* This version adds a [privacy manifest required by Apple's App store](https://developer.apple.com/support/third-party-SDK-requirements).
+
+### Version 2.26.3 -- April 2024
+
+* This version adds a [privacy manifest required by Apple's App store](https://developer.apple.com/support/third-party-SDK-requirements).
+
+### Version 2.25.5 -- April 2024
+
+* This version adds a [privacy manifest required by Apple's App store](https://developer.apple.com/support/third-party-SDK-requirements).
+
+### Version 2.27.2 -- March 2024
+
+* This version fixes an issue where apps would sometimes crash when unpublishing.  
+
+### Version 2.27.1 -- January 2024
+
+* This version fixes a bug where `canSubscribe` returned incorrect information in `OTSessionCapabilities`.   
+
+* This version fixes an issue where the state of captions was not properly updated for subscribers under certain circumstances. 
+
+* This version fixes some crashes.   
+
+* This version fixes an issue where some private classes were exposed. 
+
+### Version 2.27.0 -- December 2023
+
+* This version adds support for publisher audio fallback. This was previously a beta feature. See the [Publisher audio fallback](https://tokbox.com/developer/guides/audio-fallback/) documentation.  
+
+* This version adds support for the VP9 codec in relayed sessions. For more information, see the [Video Codecs](https://tokbox.com/developer/guides/codecs/) documentation.  
+
+* This version adds support for end-to-end encryption. You can enable end-to end-encryption using the `[OTSession setEncryptionSecret:secret:error:]` method. For more information, see the [End-to-End Encryption](https://tokbox.com/developer/guides/end-to-end-encryption) documentation.   
+
+* This version adds support for adaptive media routing. For more information, see the [Adaptive Media Routing](https://tokbox.com/developer/guides/create-session/#adaptive-media-routing) documentation.  
+
+* This version adds some memory management improvements.
+
+* This version fixes an issue where certain events were being dropped.
+
+### Version 2.26.2 -- November 2023
+
+* This version adds support for publisher audio fallback. This is a beta feature. See the [Publisher audio fallback](https://tokbox.com/developer/guides/audio-fallback/) documentation.
+
+* This version includes an updated version of WebRTC 99 with a fix for the CVE-2023-5217 vulnerability in the libvpx libraries.
+
+### Version 2.26.1 -- September 2023
+
+* This version fixes an issue where video dimensions were incorrect if users muted video.  
+
+* This version fixes an issue where, in some cases, users were unable to connect to sessions with both custom TURN servers and IP Proxies enabled.  
+
+* This version fixes an issue where, in some cases, using custom audio devices was causing publishing failures.  
+
+* This version fixes some memory leaks.
+
+* This version fixes an issue where it sometimes took longer than expected to disconnect from a session. 
+
+* This version fixes an issue where, in some cases, setting the microphone to mute was causing a crash.  
+
+### Version 2.26.0 -- August 2023
+
+* This version adds support for the
+  [Vonage Media Processor library](https://tokbox.com/developer/guides/audio-video/vonage-media-processor)
+  and custom media transformers. You can apply custom video and audio transformations to video and audio
+  streams using the `OTPublisherKit.videoTransformers` and `OTPublisherKit.audioTransformer` properties. This
+  was previously a beta feature.
+
+* This version adds support for more
+  [Vonage Media Processor](https://tokbox.com/developer/guides/audio-video/vonage-media-processor) filters.
+  The background blur filter now accepts a custom radius option. And there is a new background replacement
+  filter. See the docs for the `OTPublisherKit.videoTransformers` property.
+
+* This version adds support for [Live Captions](https://tokbox.com/developer/guides/live-captions/). See the docs for
+  `OTPublisherKitSettings.publishCaptions` and `OTSubscriberKit.subscribeToCaptions`. This was previously a beta feature.
+
+* This version fixes some compiler warnings.
+
+* This version fixes an issue where the SDK was crashing for subscribers to streams published using the iOS SDK in relayed sessions.
+
+### Version 2.25.3 -- July 2023
+
+* This version fixes some inconsistent cleanup-related audio callbacks for custom devices.
+
+### Version 2.25.2 -- May 2023
+
+* This version adds support for Insertable Streams for video and audio. You can apply custom video and
+  audio transformations to video and audio streams using the
+ `OTPublisherKit.videoTransformers` and `OTPublisherKit.audioTransformer` properties. This is a beta feature.
+
+* This version adds support for [Live Captions](https://tokbox.com/developer/guides/live-captions/). See the docs for
+  `OTPublisherKitSettings.publishCaptions` and `OTSubscriberKit.subscribeToCaptions`. This is a beta feature.
+
+* This version fixes an issue where captions were enabled by default.
+
+### Version 2.25.1 -- May 2023
+
+* Added support for Swift Package Manager: https://github.com/opentok/vonage-client-sdk-video.git.
+
+* This version removes support for FAT binaries (previously available as 
+  Pod "OpenTok").  Only XCFramework artifacts are supported (available as Pod "OTXCFramework").
+
+* This version fixes linker errors when an application uses multiple WebRTC libraries.
+
+* This version fixes some memory leaks.
+
+* This version fixes an issue where occasionally the app would crash if it was publishing for a very 
+  long time.  
+  
 ### Version 2.25.0 -- April 2023
 
 * This version of the SDK uses an updated version of WebRTC 99, which includes improvements in performance and stability.
