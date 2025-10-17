@@ -1,4 +1,4 @@
- :warning: This Library has been deprecated in favour of the [VonageClientSDK](https://github.com/Vonage/vonage-video-client-sdk-swift) :warning:
+ :warning: **This Library has been deprecated in favour of the [VonageClientSDK](https://github.com/Vonage/vonage-video-client-sdk-swift)** :warning:
 
 # VonageClientSDKVideo
 
