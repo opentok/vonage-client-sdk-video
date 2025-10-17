@@ -1,3 +1,5 @@
+ :warning: This Library has been deprecated in favour of the [VonageClientSDK] (https://github.com/Vonage/vonage-video-client-sdk-swift) :warning:
+
 # VonageClientSDKVideo
 
 The Vonage Client SDK Video iOS lets you use Vonage-powered video sessions in apps
